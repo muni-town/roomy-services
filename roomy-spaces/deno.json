@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts",
+    "test": "deno test -A"
+  },
+  "imports": {
+    "@atproto/identity": "npm:@atproto/identity@^0.4.5",
+    "@atproto/xrpc-server": "npm:@atproto/xrpc-server@^0.7.8",
+    "@automerge/automerge": "npm:@automerge/automerge@^2.2.8",
+    "@std/assert": "jsr:@std/assert@^1.0.11",
+    "fflate": "npm:fflate@^0.8.2",
+    "itty-router": "npm:itty-router@^5.0.18",
+    "zod": "npm:zod@^3.24.1"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@roomy-chat/router",
+  "version": "0.1.0-alpha.14",
+  "license": "BlueOak-1.0.0",
+  "tasks": {
+    "dev": "env DID=test UNSAFE_DEV_TOKEN=token deno run --watch -A --unstable-kv main.ts",
+    "cli": "deno run -A client-cli.ts"
+  },
+  "exports": {
+    ".": "./main.ts",
+    "./client": "./client.ts"
+  },
+  "imports": {
+    "@atproto-labs/handle-resolver": "npm:@atproto-labs/handle-resolver@^0.1.7",
+    "@atproto/identity": "npm:@atproto/identity@^0.4.5",
+    "@atproto/xrpc-server": "npm:@atproto/xrpc-server@^0.7.8",
+    "@cliffy/prompt": "jsr:@cliffy/prompt@1.0.0-rc.7",
+    "@derzade/typescript-event-target": "jsr:@derzade/typescript-event-target@^1.1.1",
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/cli": "jsr:@std/cli@^1.0.12",
+    "base32-encode": "npm:base32-encode@^2.0.0",
+    "itty-router": "npm:itty-router@^5.0.18",
+    "ulidx": "npm:ulidx@^2.4.1",
+    "zod": "npm:zod@^3.24.1"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "dev": "DID=test deno run --watch --unstable-kv -A main.ts"
+  },
+  "nodeModulesDir": "auto",
+  "imports": {
+    "@atproto/did": "npm:@atproto/did@^0.1.3",
+    "@atproto/identity": "npm:@atproto/identity@^0.4.5",
+    "@atproto/xrpc-server": "npm:@atproto/xrpc-server@^0.7.8",
+    "@noble/ed25519": "jsr:@noble/ed25519@^2.2.3",
+    "base32-encode": "npm:base32-encode@^2.0.0",
+    "itty-router": "npm:itty-router@^5.0.18"
+  }
+}

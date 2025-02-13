@@ -1,0 +1,63 @@
+{
+  "version": "4",
+  "specifiers": {
+    "jsr:@std/assert@1": "1.0.11",
+    "jsr:@std/internal@^1.0.5": "1.0.5",
+    "npm:@atproto-labs/handle-resolver@~0.1.7": "0.1.7",
+    "npm:itty-router@^5.0.18": "5.0.18"
+  },
+  "jsr": {
+    "@std/assert@1.0.11": {
+      "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.5": {
+      "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
+    }
+  },
+  "npm": {
+    "@atproto-labs/handle-resolver@0.1.7": {
+      "integrity": "sha512-nb4uAOgRVMp2NGVTJnor4ohqySbd1KyB5VzQLaRjMaPwH60Al057eTqiKRbeH/xD7hOBPNj1m0YjgxzvyAnWkg==",
+      "dependencies": [
+        "@atproto-labs/simple-store",
+        "@atproto-labs/simple-store-memory",
+        "@atproto/did",
+        "zod"
+      ]
+    },
+    "@atproto-labs/simple-store-memory@0.1.2": {
+      "integrity": "sha512-q6wawjKKXuhUzr2MnkSlgr6zU6VimYkL8eNvLQvkroLnIDyMkoCKO4+EJ885ZD8lGwBo4pX9Lhrg9JJ+ncJI8g==",
+      "dependencies": [
+        "@atproto-labs/simple-store",
+        "lru-cache"
+      ]
+    },
+    "@atproto-labs/simple-store@0.1.2": {
+      "integrity": "sha512-9vTNvyPPBs44tKVFht16wGlilW8u4wpEtKwLkWbuNEh3h9TTQ8zjVhEoGZh/v73G4Otr9JUOSIq+/5+8OZD2mQ=="
+    },
+    "@atproto/did@0.1.5": {
+      "integrity": "sha512-8+1D08QdGE5TF0bB0vV8HLVrVZJeLNITpRTUVEoABNMRaUS7CoYSVb0+JNQDeJIVmqMjOL8dOjvCUDkp3gEaGQ==",
+      "dependencies": [
+        "zod"
+      ]
+    },
+    "itty-router@5.0.18": {
+      "integrity": "sha512-mK3ReOt4ARAGy0V0J7uHmArG2USN2x0zprZ+u+YgmeRjXTDbaowDy3kPcsmQY6tH+uHhDgpWit9Vqmv/4rTXwA=="
+    },
+    "lru-cache@10.4.3": {
+      "integrity": "sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ=="
+    },
+    "zod@3.24.1": {
+      "integrity": "sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@1",
+      "npm:@atproto-labs/handle-resolver@~0.1.7",
+      "npm:itty-router@^5.0.18"
+    ]
+  }
+}

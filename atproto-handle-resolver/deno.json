@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --watch main.ts"
+  },
+  "imports": {
+    "@atproto-labs/handle-resolver": "npm:@atproto-labs/handle-resolver@^0.1.7",
+    "@std/assert": "jsr:@std/assert@1",
+    "itty-router": "npm:itty-router@^5.0.18"
+  }
+}
