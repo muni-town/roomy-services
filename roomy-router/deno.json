@@ -7,8 +7,7 @@
     "cli": "deno run -A client-cli.ts"
   },
   "exports": {
-    ".": "./main.ts",
-    "./client": "./client.ts"
+    ".": "./main.ts"
   },
   "imports": {
     "@atproto-labs/handle-resolver": "npm:@atproto-labs/handle-resolver@^0.1.7",
