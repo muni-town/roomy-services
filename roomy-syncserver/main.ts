@@ -1,10 +1,11 @@
 import { AutoRouter, cors, error } from "itty-router";
 import { IdResolver } from "@atproto/identity";
 import { verifyJwt } from "@atproto/xrpc-server";
-import { PeerId, Repo } from "@automerge/automerge-repo";
 import encodeBase32 from "base32-encode";
-import { storage } from "./storage.ts";
-import { DenoNetworkAdapter } from "./network.ts";
+import { SuperPeer1 } from "@muni-town/leaf/sync1";
+import { SuperPeer1BinaryWrapper } from "@muni-town/leaf/sync1/proto";
+import { StorageManager } from "@muni-town/leaf/storage";
+import { denoKvStorageAdapter } from "@muni-town/leaf/storage/deno-kv";
 
 // Parse configuration environment variables.
 const dataDir = Deno.env.get("DATA_DIR");
@@ -13,16 +14,7 @@ const serviceEndpoint = Deno.env.get("PUBLIC_URL");
 const unsafeDevToken = Deno.env.get("UNSAFE_DEV_TOKEN");
 
 const kv = await Deno.openKv(dataDir);
-const networkAdapter = new DenoNetworkAdapter();
-
-const repo = new Repo({
-  storage: storage(kv),
-  network: [networkAdapter],
-  peerId: `roomy-syncserver-${serviceDid}` as PeerId,
-  // Since this is a server, we don't share generously — meaning we only sync documents they already
-  // know about and can ask for by ID.
-  sharePolicy: () => Promise.resolve(false),
-});
+const superPeer = new SuperPeer1(new StorageManager(denoKvStorageAdapter(kv)));
 
 // TODO: add a DID cache using Deno KV
 const idResolver = new IdResolver();
@@ -95,9 +87,23 @@ router.get("/sync/as/:did", async (req) => {
   const { socket, response } = Deno.upgradeWebSocket(req, {
     protocol: "authorization",
   });
+  socket.binaryType = "arraybuffer";
 
-  // Add new socket to the network adapter
-  networkAdapter.acceptClient(socket);
+  const backend = new SuperPeer1BinaryWrapper(superPeer);
+
+  socket.addEventListener("open", () => {
+    backend.setReceiver((data) => {
+      socket.send(data);
+    });
+    socket.addEventListener("message", (ev) => {
+      if (ev.data instanceof ArrayBuffer) {
+        backend.send(new Uint8Array(ev.data));
+      }
+    });
+    socket.addEventListener("close", () => {
+      backend.cleanup();
+    });
+  });
 
   return response;
 });
