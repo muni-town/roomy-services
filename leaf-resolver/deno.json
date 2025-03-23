@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --watch main.ts"
+  },
+  "imports": {
+    "@muni-town/leaf": "jsr:@muni-town/leaf@0.2.0-preview.12",
+    "itty-router": "npm:itty-router@^5.0.18"
+  }
+}
