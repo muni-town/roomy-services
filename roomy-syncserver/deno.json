@@ -1,4 +1,10 @@
 {
+  "name": "@roomy-chat/syncserver",
+  "version": "0.1.0-alpha.3",
+  "license": "BlueOak-1.0.0",
+  "exports": {
+    ".": "./main.ts"
+  },
   "tasks": {
     "dev": "deno run --watch main.ts"
   },
