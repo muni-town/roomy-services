@@ -1,14 +1,30 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@muni-town/leaf@0.2.0-preview.14": "0.2.0-preview.14",
     "jsr:@std/assert@1": "1.0.11",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "npm:@atproto/identity@~0.4.6": "0.4.6",
     "npm:@atproto/xrpc-server@~0.7.11": "0.7.11",
+    "npm:@msgpack/msgpack@^3.1.1": "3.1.1",
+    "npm:@types/node@*": "22.12.0",
+    "npm:arktype@^2.1.9": "2.1.19",
+    "npm:base32-decode@1": "1.0.0",
     "npm:base32-encode@2": "2.0.0",
-    "npm:itty-router@^5.0.18": "5.0.18"
+    "npm:itty-router@^5.0.18": "5.0.18",
+    "npm:loro-crdt@^1.5.1": "1.5.2"
   },
   "jsr": {
+    "@muni-town/leaf@0.2.0-preview.14": {
+      "integrity": "4856f3ed6d34c1febb7e2821197bcdd42e1353eba3def8e0ea577458818cd66d",
+      "dependencies": [
+        "npm:@msgpack/msgpack",
+        "npm:arktype",
+        "npm:base32-decode",
+        "npm:base32-encode",
+        "npm:loro-crdt"
+      ]
+    },
     "@std/assert@1.0.11": {
       "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
       "dependencies": [
@@ -20,6 +36,15 @@
     }
   },
   "npm": {
+    "@ark/schema@0.45.9": {
+      "integrity": "sha512-rG0v/JI0sibn/0wERAHTYVLCtEqoMP2IIlxnb+S5DrEjCI5wpubbZSWMDW50tZ8tV6FANu6zzHDeeKbp6lsZdg==",
+      "dependencies": [
+        "@ark/util"
+      ]
+    },
+    "@ark/util@0.45.9": {
+      "integrity": "sha512-0WYNAb8aRGp7dNt6xIvIrRzL7V1XL3u3PK2vcklhtTrdaP235DjC9qJhzidrxtWr68mA5ySSjUrgrXk622bKkw=="
+    },
     "@atproto/common-web@0.4.0": {
       "integrity": "sha512-ZYL0P9myHybNgwh/hBY0HaBzqiLR1B5/ie5bJpLQAg0whRzNA28t8/nU2vh99tbsWcAF0LOD29M8++LyENJLNQ==",
       "dependencies": [
@@ -117,6 +142,9 @@
         "multiformats"
       ]
     },
+    "@msgpack/msgpack@3.1.1": {
+      "integrity": "sha512-DnBpqkMOUGayNVKyTLlkM6ILmU/m/+VUxGkuQlPQVAcvreLz5jn1OlQnWd8uHKL/ZSiljpM12rjRhr51VtvJUQ=="
+    },
     "@noble/curves@1.8.1": {
       "integrity": "sha512-warwspo+UYUPep0Q+vtdVB4Ugn8GGQj8iyB3gnRWsztmUHTI3S1nhdiWNsPUGL0vud7JlRRk1XEu7Lq1KGTnMQ==",
       "dependencies": [
@@ -125,6 +153,12 @@
     },
     "@noble/hashes@1.7.1": {
       "integrity": "sha512-B8XBPsn4vT/KJAGqDzbwztd+6Yte3P4V7iafm24bxgDe/mlRuK6xmWPuCNrKt2vDafZ8MfJLlchDG/vYafQEjQ=="
+    },
+    "@types/node@22.12.0": {
+      "integrity": "sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==",
+      "dependencies": [
+        "undici-types"
+      ]
     },
     "abort-controller@3.0.0": {
       "integrity": "sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==",
@@ -139,11 +173,21 @@
         "negotiator"
       ]
     },
+    "arktype@2.1.19": {
+      "integrity": "sha512-notORSuTSpfLV7rq0kYC4mTgIVlVR0xQuvtFxOaE9aKiXyON/kgoIBwZZcKeSSb4BebNcfJoGlxJicAUl/HMdw==",
+      "dependencies": [
+        "@ark/schema",
+        "@ark/util"
+      ]
+    },
     "array-flatten@1.1.1": {
       "integrity": "sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg=="
     },
     "atomic-sleep@1.0.0": {
       "integrity": "sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ=="
+    },
+    "base32-decode@1.0.0": {
+      "integrity": "sha512-KNWUX/R7wKenwE/G/qFMzGScOgVntOmbE27vvc6GrniDGYb6a5+qWcuoXl8WIOQL7q0TpK7nZDm1Y04Yi3Yn5g=="
     },
     "base32-encode@2.0.0": {
       "integrity": "sha512-mlmkfc2WqdDtMl/id4qm3A7RjW6jxcbAoMjdRmsPiwQP0ufD4oXItYMnPgVHe80lnAIy+1xwzhHE1s4FoIceSw==",
@@ -415,6 +459,9 @@
     "itty-router@5.0.18": {
       "integrity": "sha512-mK3ReOt4ARAGy0V0J7uHmArG2USN2x0zprZ+u+YgmeRjXTDbaowDy3kPcsmQY6tH+uHhDgpWit9Vqmv/4rTXwA=="
     },
+    "loro-crdt@1.5.2": {
+      "integrity": "sha512-MvSY5sf8+86d7NL8cesXvIgQc4XZmGyDhAySrcSDCz5ahyvedaICDWXZ7tMCB33TQtp+wqnuausPalFfP8G/eA=="
+    },
     "math-intrinsics@1.1.0": {
       "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g=="
     },
@@ -669,6 +716,9 @@
         "multiformats"
       ]
     },
+    "undici-types@6.20.0": {
+      "integrity": "sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg=="
+    },
     "unpipe@1.0.0": {
       "integrity": "sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ=="
     },
@@ -687,7 +737,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@muni-town/leaf@0.2.0-preview.13",
+      "jsr:@muni-town/leaf@0.2.0-preview.14",
       "jsr:@std/assert@1",
       "npm:@atproto/identity@~0.4.6",
       "npm:@atproto/xrpc-server@~0.7.11",
