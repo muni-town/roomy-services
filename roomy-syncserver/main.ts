@@ -5,7 +5,7 @@ import encodeBase32 from "base32-encode";
 import { SuperPeer1 } from "@muni-town/leaf/sync1";
 import { SuperPeer1BinaryWrapper } from "@muni-town/leaf/sync1/proto";
 import { StorageManager } from "@muni-town/leaf/storage";
-import { denoKvStorageAdapter } from "@muni-town/leaf/storage/deno-kv";
+import { denoKvToolboxStorageAdapter } from "@muni-town/leaf/storage/deno-kv-toolbox";
 
 // Parse configuration environment variables.
 const dataDir = Deno.env.get("DATA_DIR");
@@ -14,7 +14,7 @@ const serviceEndpoint = Deno.env.get("PUBLIC_URL");
 const unsafeDevToken = Deno.env.get("UNSAFE_DEV_TOKEN");
 
 const kv = await Deno.openKv(dataDir);
-const superPeer = new SuperPeer1(new StorageManager(denoKvStorageAdapter(kv)));
+const superPeer = new SuperPeer1(new StorageManager(denoKvToolboxStorageAdapter(kv)));
 
 // TODO: add a DID cache using Deno KV
 const idResolver = new IdResolver();
