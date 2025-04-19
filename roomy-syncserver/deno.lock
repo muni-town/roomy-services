@@ -1,26 +1,104 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@std/assert@1": "1.0.11",
+    "jsr:@deno/kv-utils@~0.1.3": "0.1.3",
+    "jsr:@kitsonk/kv-toolbox@0.27.4": "0.27.4",
+    "jsr:@muni-town/leaf-storage-deno-kv@~0.1.0-preview.1": "0.1.0-preview.1",
+    "jsr:@muni-town/leaf@~0.2.0-preview.16": "0.2.0-preview.16",
+    "jsr:@std/assert@1": "1.0.12",
+    "jsr:@std/bytes@1": "1.0.5",
+    "jsr:@std/crypto@1": "1.0.4",
+    "jsr:@std/encoding@1": "1.0.9",
+    "jsr:@std/encoding@^1.0.5": "1.0.9",
     "jsr:@std/internal@^1.0.5": "1.0.5",
+    "jsr:@std/internal@^1.0.6": "1.0.6",
+    "jsr:@std/media-types@1": "1.1.0",
     "npm:@atproto/identity@~0.4.6": "0.4.6",
     "npm:@atproto/xrpc-server@~0.7.11": "0.7.11",
+    "npm:@msgpack/msgpack@^3.1.1": "3.1.1",
     "npm:@types/node@*": "22.12.0",
+    "npm:arktype@^2.1.9": "2.1.20",
+    "npm:base32-decode@1": "1.0.0",
     "npm:base32-encode@2": "2.0.0",
-    "npm:itty-router@^5.0.18": "5.0.18"
+    "npm:itty-router@^5.0.18": "5.0.18",
+    "npm:loro-crdt@^1.5.1": "1.5.3"
   },
   "jsr": {
+    "@deno/kv-utils@0.1.3": {
+      "integrity": "f3877510f82ce78a1946f6fc9727393d44421928c971572c18d90f9206448e98",
+      "dependencies": [
+        "jsr:@std/encoding@^1.0.5"
+      ]
+    },
+    "@kitsonk/kv-toolbox@0.27.4": {
+      "integrity": "71c59db174e73d618e8ef51ba8ac1ba769725f6ec0a52c2c09de295c98b3b0a8",
+      "dependencies": [
+        "jsr:@deno/kv-utils",
+        "jsr:@std/assert",
+        "jsr:@std/bytes",
+        "jsr:@std/crypto",
+        "jsr:@std/encoding@1",
+        "jsr:@std/media-types"
+      ]
+    },
+    "@muni-town/leaf@0.2.0-preview.16": {
+      "integrity": "9a63cc93f0cae16cd9d329caafd0e7b618a2cf40b11332eaaf02fc0bc60b7af1",
+      "dependencies": [
+        "npm:@msgpack/msgpack",
+        "npm:arktype",
+        "npm:base32-decode",
+        "npm:base32-encode",
+        "npm:loro-crdt"
+      ]
+    },
+    "@muni-town/leaf-storage-deno-kv@0.1.0-preview.1": {
+      "integrity": "3546aa5129b7fbaad346fb7740de5dffde387c3a6c7c532bcd67ec4c3c0c873c",
+      "dependencies": [
+        "jsr:@kitsonk/kv-toolbox",
+        "jsr:@muni-town/leaf"
+      ]
+    },
     "@std/assert@1.0.11": {
       "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
       "dependencies": [
-        "jsr:@std/internal"
+        "jsr:@std/internal@^1.0.5"
       ]
+    },
+    "@std/assert@1.0.12": {
+      "integrity": "08009f0926dda9cbd8bef3a35d3b6a4b964b0ab5c3e140a4e0351fbf34af5b9a",
+      "dependencies": [
+        "jsr:@std/internal@^1.0.6"
+      ]
+    },
+    "@std/bytes@1.0.5": {
+      "integrity": "4465dd739d7963d964c809202ebea6d5c6b8e3829ef25c6a224290fbb8a1021e"
+    },
+    "@std/crypto@1.0.4": {
+      "integrity": "cee245c453bd5366207f4d8aa25ea3e9c86cecad2be3fefcaa6cb17203d79340"
+    },
+    "@std/encoding@1.0.9": {
+      "integrity": "025b8f18eb1749bc30d1353bf48b77d1eb5e35610220fa226f5a046b9240c5d7"
     },
     "@std/internal@1.0.5": {
       "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
+    },
+    "@std/internal@1.0.6": {
+      "integrity": "9533b128f230f73bd209408bb07a4b12f8d4255ab2a4d22a1fd6d87304aca9a4"
+    },
+    "@std/media-types@1.1.0": {
+      "integrity": "c9d093f0c05c3512932b330e3cc1fe1d627b301db33a4c2c2185c02471d6eaa4"
     }
   },
   "npm": {
+    "@ark/schema@0.46.0": {
+      "integrity": "sha512-c2UQdKgP2eqqDArfBqQIJppxJHvNNXuQPeuSPlDML4rjw+f1cu0qAlzOG4b8ujgm9ctIDWwhpyw6gjG5ledIVQ==",
+      "dependencies": [
+        "@ark/util"
+      ]
+    },
+    "@ark/util@0.46.0": {
+      "integrity": "sha512-JPy/NGWn/lvf1WmGCPw2VGpBg5utZraE84I7wli18EDF3p3zc/e9WolT35tINeZO3l7C77SjqRJeAUoT0CvMRg=="
+    },
     "@atproto/common-web@0.4.0": {
       "integrity": "sha512-ZYL0P9myHybNgwh/hBY0HaBzqiLR1B5/ie5bJpLQAg0whRzNA28t8/nU2vh99tbsWcAF0LOD29M8++LyENJLNQ==",
       "dependencies": [
@@ -118,6 +196,9 @@
         "multiformats"
       ]
     },
+    "@msgpack/msgpack@3.1.1": {
+      "integrity": "sha512-DnBpqkMOUGayNVKyTLlkM6ILmU/m/+VUxGkuQlPQVAcvreLz5jn1OlQnWd8uHKL/ZSiljpM12rjRhr51VtvJUQ=="
+    },
     "@noble/curves@1.8.1": {
       "integrity": "sha512-warwspo+UYUPep0Q+vtdVB4Ugn8GGQj8iyB3gnRWsztmUHTI3S1nhdiWNsPUGL0vud7JlRRk1XEu7Lq1KGTnMQ==",
       "dependencies": [
@@ -146,11 +227,21 @@
         "negotiator"
       ]
     },
+    "arktype@2.1.20": {
+      "integrity": "sha512-IZCEEXaJ8g+Ijd59WtSYwtjnqXiwM8sWQ5EjGamcto7+HVN9eK0C4p0zDlCuAwWhpqr6fIBkxPuYDl4/Mcj/+Q==",
+      "dependencies": [
+        "@ark/schema",
+        "@ark/util"
+      ]
+    },
     "array-flatten@1.1.1": {
       "integrity": "sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg=="
     },
     "atomic-sleep@1.0.0": {
       "integrity": "sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ=="
+    },
+    "base32-decode@1.0.0": {
+      "integrity": "sha512-KNWUX/R7wKenwE/G/qFMzGScOgVntOmbE27vvc6GrniDGYb6a5+qWcuoXl8WIOQL7q0TpK7nZDm1Y04Yi3Yn5g=="
     },
     "base32-encode@2.0.0": {
       "integrity": "sha512-mlmkfc2WqdDtMl/id4qm3A7RjW6jxcbAoMjdRmsPiwQP0ufD4oXItYMnPgVHe80lnAIy+1xwzhHE1s4FoIceSw==",
@@ -421,6 +512,9 @@
     },
     "itty-router@5.0.18": {
       "integrity": "sha512-mK3ReOt4ARAGy0V0J7uHmArG2USN2x0zprZ+u+YgmeRjXTDbaowDy3kPcsmQY6tH+uHhDgpWit9Vqmv/4rTXwA=="
+    },
+    "loro-crdt@1.5.3": {
+      "integrity": "sha512-rrAoUcpcxmrZgkBdqU3CkU+QFSE8zrAELMyU66s5WjG9Jqt/4jGoU/wU8ciSrDAHb3LLBwgOFtUMFRETd0FV6g=="
     },
     "math-intrinsics@1.1.0": {
       "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g=="
@@ -697,7 +791,8 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@muni-town/leaf@0.2.0-preview.15",
+      "jsr:@muni-town/leaf-storage-deno-kv@~0.1.0-preview.1",
+      "jsr:@muni-town/leaf@~0.2.0-preview.16",
       "jsr:@std/assert@1",
       "npm:@atproto/identity@~0.4.6",
       "npm:@atproto/xrpc-server@~0.7.11",
