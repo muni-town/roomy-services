@@ -1,6 +1,6 @@
 {
   "name": "@roomy-chat/syncserver",
-  "version": "0.1.0-alpha.6",
+  "version": "0.1.0-alpha.7",
   "license": "BlueOak-1.0.0",
   "exports": {
     ".": "./main.ts"
@@ -13,8 +13,10 @@
     "@atproto/xrpc-server": "npm:@atproto/xrpc-server@^0.7.11",
     "@muni-town/leaf": "jsr:@muni-town/leaf@^0.2.0-preview.16",
     "@muni-town/leaf-storage-deno-kv": "jsr:@muni-town/leaf-storage-deno-kv@^0.1.0-preview.1",
+    "@muni-town/leaf-sync-socket-io-server": "jsr:@muni-town/leaf-sync-socket-io-server@^0.1.0-preview.2",
     "@std/assert": "jsr:@std/assert@1",
+    "@types/express": "npm:@types/express@^5.0.1",
     "base32-encode": "npm:base32-encode@^2.0.0",
-    "itty-router": "npm:itty-router@^5.0.18"
+    "express": "npm:express@^5.1.0"
   }
 }
