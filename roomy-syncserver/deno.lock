@@ -1,5 +1,5 @@
 {
-  "version": "4",
+  "version": "5",
   "specifiers": {
     "jsr:@deno/kv-utils@~0.1.3": "0.1.3",
     "jsr:@kitsonk/kv-toolbox@0.27.4": "0.27.4",
@@ -16,6 +16,7 @@
     "npm:@atproto/identity@~0.4.6": "0.4.6",
     "npm:@atproto/xrpc-server@~0.7.11": "0.7.11",
     "npm:@msgpack/msgpack@^3.1.1": "3.1.1",
+    "npm:@muni-town/leaf@~0.2.0-preview.22": "0.2.0-preview.22",
     "npm:@types/node@*": "22.12.0",
     "npm:arktype@^2.1.9": "2.1.20",
     "npm:base32-decode@1": "1.0.0",
@@ -55,7 +56,7 @@
       "integrity": "3546aa5129b7fbaad346fb7740de5dffde387c3a6c7c532bcd67ec4c3c0c873c",
       "dependencies": [
         "jsr:@kitsonk/kv-toolbox",
-        "jsr:@muni-town/leaf"
+        "jsr:@muni-town/leaf@~0.2.0-preview.16"
       ]
     },
     "@std/assert@1.0.11": {
@@ -172,22 +173,34 @@
       ]
     },
     "@cbor-extract/cbor-extract-darwin-arm64@2.2.0": {
-      "integrity": "sha512-P7swiOAdF7aSi0H+tHtHtr6zrpF3aAq/W9FXx5HektRvLTM2O89xCyXF3pk7pLc7QpaY7AoaE8UowVf9QBdh3w=="
+      "integrity": "sha512-P7swiOAdF7aSi0H+tHtHtr6zrpF3aAq/W9FXx5HektRvLTM2O89xCyXF3pk7pLc7QpaY7AoaE8UowVf9QBdh3w==",
+      "os": ["darwin"],
+      "cpu": ["arm64"]
     },
     "@cbor-extract/cbor-extract-darwin-x64@2.2.0": {
-      "integrity": "sha512-1liF6fgowph0JxBbYnAS7ZlqNYLf000Qnj4KjqPNW4GViKrEql2MgZnAsExhY9LSy8dnvA4C0qHEBgPrll0z0w=="
+      "integrity": "sha512-1liF6fgowph0JxBbYnAS7ZlqNYLf000Qnj4KjqPNW4GViKrEql2MgZnAsExhY9LSy8dnvA4C0qHEBgPrll0z0w==",
+      "os": ["darwin"],
+      "cpu": ["x64"]
     },
     "@cbor-extract/cbor-extract-linux-arm64@2.2.0": {
-      "integrity": "sha512-rQvhNmDuhjTVXSPFLolmQ47/ydGOFXtbR7+wgkSY0bdOxCFept1hvg59uiLPT2fVDuJFuEy16EImo5tE2x3RsQ=="
+      "integrity": "sha512-rQvhNmDuhjTVXSPFLolmQ47/ydGOFXtbR7+wgkSY0bdOxCFept1hvg59uiLPT2fVDuJFuEy16EImo5tE2x3RsQ==",
+      "os": ["linux"],
+      "cpu": ["arm64"]
     },
     "@cbor-extract/cbor-extract-linux-arm@2.2.0": {
-      "integrity": "sha512-QeBcBXk964zOytiedMPQNZr7sg0TNavZeuUCD6ON4vEOU/25+pLhNN6EDIKJ9VLTKaZ7K7EaAriyYQ1NQ05s/Q=="
+      "integrity": "sha512-QeBcBXk964zOytiedMPQNZr7sg0TNavZeuUCD6ON4vEOU/25+pLhNN6EDIKJ9VLTKaZ7K7EaAriyYQ1NQ05s/Q==",
+      "os": ["linux"],
+      "cpu": ["arm"]
     },
     "@cbor-extract/cbor-extract-linux-x64@2.2.0": {
-      "integrity": "sha512-cWLAWtT3kNLHSvP4RKDzSTX9o0wvQEEAj4SKvhWuOVZxiDAeQazr9A+PSiRILK1VYMLeDml89ohxCnUNQNQNCw=="
+      "integrity": "sha512-cWLAWtT3kNLHSvP4RKDzSTX9o0wvQEEAj4SKvhWuOVZxiDAeQazr9A+PSiRILK1VYMLeDml89ohxCnUNQNQNCw==",
+      "os": ["linux"],
+      "cpu": ["x64"]
     },
     "@cbor-extract/cbor-extract-win32-x64@2.2.0": {
-      "integrity": "sha512-l2M+Z8DO2vbvADOBNLbbh9y5ST1RY5sqkWOg/58GkUPBYou/cuNZ68SGQ644f1CvZ8kcOxyZtw06+dxWHIoN/w=="
+      "integrity": "sha512-l2M+Z8DO2vbvADOBNLbbh9y5ST1RY5sqkWOg/58GkUPBYou/cuNZ68SGQ644f1CvZ8kcOxyZtw06+dxWHIoN/w==",
+      "os": ["win32"],
+      "cpu": ["x64"]
     },
     "@ipld/dag-cbor@7.0.3": {
       "integrity": "sha512-1VVh2huHsuohdXC1bGJNE8WR72slZ9XE2T3wbBBq31dm7ZBatmKLLxrB+XAqafxfRFjv08RZmj/W/ZqaM13AuA==",
@@ -198,6 +211,16 @@
     },
     "@msgpack/msgpack@3.1.1": {
       "integrity": "sha512-DnBpqkMOUGayNVKyTLlkM6ILmU/m/+VUxGkuQlPQVAcvreLz5jn1OlQnWd8uHKL/ZSiljpM12rjRhr51VtvJUQ=="
+    },
+    "@muni-town/leaf@0.2.0-preview.22": {
+      "integrity": "sha512-1tHrexKR3A+r0FDFjo37L+TqEjdyWNQOmfWOEqlhbqmtPYJRPnDewepE2WbgHNefI485tvBtuPR8xZh7wmGKOA==",
+      "dependencies": [
+        "@msgpack/msgpack",
+        "arktype",
+        "base32-decode",
+        "base32-encode",
+        "loro-crdt"
+      ]
     },
     "@noble/curves@1.8.1": {
       "integrity": "sha512-warwspo+UYUPep0Q+vtdVB4Ugn8GGQj8iyB3gnRWsztmUHTI3S1nhdiWNsPUGL0vud7JlRRk1XEu7Lq1KGTnMQ==",
@@ -296,23 +319,28 @@
     "cbor-extract@2.2.0": {
       "integrity": "sha512-Ig1zM66BjLfTXpNgKpvBePq271BPOvu8MR0Jl080yG7Jsl+wAZunfrwiwA+9ruzm/WEdIV5QF/bjDZTqyAIVHA==",
       "dependencies": [
+        "node-gyp-build-optional-packages"
+      ],
+      "optionalDependencies": [
         "@cbor-extract/cbor-extract-darwin-arm64",
         "@cbor-extract/cbor-extract-darwin-x64",
         "@cbor-extract/cbor-extract-linux-arm",
         "@cbor-extract/cbor-extract-linux-arm64",
         "@cbor-extract/cbor-extract-linux-x64",
-        "@cbor-extract/cbor-extract-win32-x64",
-        "node-gyp-build-optional-packages"
-      ]
+        "@cbor-extract/cbor-extract-win32-x64"
+      ],
+      "scripts": true,
+      "bin": true
     },
     "cbor-x@1.6.0": {
       "integrity": "sha512-0kareyRwHSkL6ws5VXHEf8uY1liitysCVJjlmhaLG+IXLqhSaOO+t63coaso7yjwEzWZzLy8fJo06gZDVQM9Qg==",
-      "dependencies": [
+      "optionalDependencies": [
         "cbor-extract"
       ]
     },
     "cborg@1.10.2": {
-      "integrity": "sha512-b3tFPA9pUr2zCUiCfRd2+wok2/LBSNUMKOuRRok+WlvvAgEt/PlbgPTsZUcwCOs53IJvLgTp0eotwtosE6njug=="
+      "integrity": "sha512-b3tFPA9pUr2zCUiCfRd2+wok2/LBSNUMKOuRRok+WlvvAgEt/PlbgPTsZUcwCOs53IJvLgTp0eotwtosE6njug==",
+      "bin": true
     },
     "content-disposition@0.5.4": {
       "integrity": "sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==",
@@ -538,7 +566,8 @@
       ]
     },
     "mime@1.6.0": {
-      "integrity": "sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg=="
+      "integrity": "sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==",
+      "bin": true
     },
     "ms@2.0.0": {
       "integrity": "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A=="
@@ -556,7 +585,8 @@
       "integrity": "sha512-+P72GAjVAbTxjjwUmwjVrqrdZROD4nf8KgpBoDxqXXTiYZZt/ud60dE5yvCSr9lRO8e8yv6kgJIC0K0PfZFVQw==",
       "dependencies": [
         "detect-libc"
-      ]
+      ],
+      "bin": true
     },
     "object-inspect@1.13.4": {
       "integrity": "sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew=="
@@ -600,7 +630,8 @@
         "safe-stable-stringify",
         "sonic-boom",
         "thread-stream"
-      ]
+      ],
+      "bin": true
     },
     "process-warning@3.0.0": {
       "integrity": "sha512-mqn0kFRl0EoqhnL0GQ0veqFHyIN1yig9RHh/InzORTUiZHFRAur+aMtRkELNwGs9aNwKS6tg/An4NYBPGwvtzQ=="
@@ -792,10 +823,10 @@
   "workspace": {
     "dependencies": [
       "jsr:@muni-town/leaf-storage-deno-kv@~0.1.0-preview.1",
-      "jsr:@muni-town/leaf@~0.2.0-preview.16",
       "jsr:@std/assert@1",
       "npm:@atproto/identity@~0.4.6",
       "npm:@atproto/xrpc-server@~0.7.11",
+      "npm:@muni-town/leaf@~0.2.0-preview.22",
       "npm:base32-encode@2",
       "npm:itty-router@^5.0.18"
     ]
