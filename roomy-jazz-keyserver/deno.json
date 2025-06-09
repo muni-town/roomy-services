@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "dev": "DID=test deno run --watch --unstable-kv -A main.ts"
+  },
+  "nodeModulesDir": "auto",
+  "imports": {
+    "@atproto/identity": "npm:@atproto/identity@^0.4.5",
+    "@atproto/xrpc-server": "npm:@atproto/xrpc-server@^0.7.8",
+    "cojson": "npm:cojson@^0.14.22",
+    "itty-router": "npm:itty-router@^5.0.18",
+    "jazz-browser": "npm:jazz-browser@^0.14.21",
+    "jazz-tools": "npm:jazz-tools@^0.14.21"
+  }
+}

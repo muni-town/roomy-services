@@ -1,0 +1,52 @@
+[
+  {
+    "lexicon": 1,
+    "id": "chat.roomy.v0.key",
+    "defs": {
+      "main": {
+        "type": "query",
+        "output": {
+          "encoding": "application/json",
+          "schema": {
+            "type": "object",
+            "required": ["publicKey", "privateKey"],
+            "properties": {
+              "publicKey": {
+                "type": "string"
+              },
+              "privateKey": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "lexicon": 1,
+    "id": "chat.roomy.v0.key.public",
+    "defs": {
+      "main": {
+        "type": "query",
+        "parameters": {
+          "type": "params",
+          "properties": {
+            "did": {
+              "type": "string"
+            }
+          }
+        },
+        "output": {
+          "encoding": "application/json",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "publicKey": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+]
