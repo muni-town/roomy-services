@@ -56,17 +56,24 @@ const router = AutoRouter({
   finally: [corsify],
 });
 
+router.get("/service-id", () => {
+  return new Response(accountId);
+});
+
 router.get("/get-challenge", () => {
   const pow = Pow.build_challenge(challengeTimeoutSeconds);
   return pow;
 });
 
-router.post("/add-member/:group/:member", async ({ headers, params }) => {
+router.post("/add-member/:group/:member", async ({ text, params }) => {
   try {
     const answeredChallenges = "answeredChallenges";
-    const challengeAnswer = headers.get("x-challenge-answer");
+    const challengeAnswer = await text();
     if (!challengeAnswer)
-      return error(400, "x-challenge-answer header is required.");
+      return error(
+        400,
+        "POST body required: proof-of-work challenge must be provided."
+      );
 
     const challenge = Pow.validate(challengeAnswer);
     if ((await kv.get<boolean>([answeredChallenges, challenge])).value) {
