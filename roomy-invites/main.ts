@@ -62,7 +62,7 @@ router.get("/service-id", () => {
 
 router.get("/get-challenge", () => {
   const pow = Pow.build_challenge(challengeTimeoutSeconds);
-  return pow;
+  return new Response(pow);
 });
 
 router.post("/add-member/:group/:member", async ({ text, params }) => {
@@ -96,7 +96,7 @@ router.post("/add-member/:group/:member", async ({ text, params }) => {
 
     return { success: true };
   } catch (e) {
-    return error(400, "Invalid challenge response: " + e);
+    return error(400, "Error adding member to group: " + e);
   }
 });
 
