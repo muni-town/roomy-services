@@ -9,8 +9,19 @@ const kv = await Deno.openKv();
 
 Pow.init_random();
 
+async function waitForever() {
+  // Just wait forever to avoid a service restart loop.
+  while (true) {
+    await new Promise((r) => setTimeout(r, 10000));
+  }
+}
+
 const syncServer = Deno.env.get("SYNCSERVER");
-if (!syncServer) throw new Error("Must specify SYNCSERVER env var");
+if (!syncServer) {
+  console.error("Must specify SYNCSERVER env var.");
+  await waitForever();
+  Deno.exit(1);
+}
 
 const accountId = Deno.env.get("ACCOUNT_ID");
 const accountSecret = Deno.env.get("ACCOUNT_SECRET");
@@ -29,10 +40,7 @@ if (!accountSecret || !accountId) {
       "\n"
   );
 
-  // Just wait forever to avoid a restart loop.
-  while (true) {
-    await new Promise((r) => setTimeout(r, 10000));
-  }
+  await waitForever();
 }
 
 const jazz = await startWorker({
