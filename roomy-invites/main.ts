@@ -9,19 +9,8 @@ const kv = await Deno.openKv();
 
 Pow.init_random();
 
-async function waitForever() {
-  // Just wait forever to avoid a service restart loop.
-  while (true) {
-    await new Promise((r) => setTimeout(r, 10000));
-  }
-}
-
 const syncServer = Deno.env.get("SYNCSERVER");
-if (!syncServer) {
-  console.error("Must specify SYNCSERVER env var.");
-  await waitForever();
-  Deno.exit(1);
-}
+if (!syncServer) throw new Error("Must specify SYNCSERVER env var");
 
 const accountId = Deno.env.get("ACCOUNT_ID");
 const accountSecret = Deno.env.get("ACCOUNT_SECRET");
@@ -30,7 +19,7 @@ if (!accountSecret || !accountId) {
     name: "Roomy Invites",
     peer: syncServer,
   });
-  console.error(
+  throw new Error(
     "Must set ACCOUNT_ID and ACCOUNT_SECRET environment variables. Here is a newly generated account if you are setting up a new server:\n\n" +
       "  ACCOUNT_ID=" +
       JSON.stringify(workerAccount.accountID) +
@@ -39,8 +28,6 @@ if (!accountSecret || !accountId) {
       JSON.stringify(workerAccount.agentSecret) +
       "\n"
   );
-
-  await waitForever();
 }
 
 const jazz = await startWorker({
