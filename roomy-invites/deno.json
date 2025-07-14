@@ -6,7 +6,6 @@
   "imports": {
     "cojson": "npm:cojson@^0.14.22",
     "itty-router": "npm:itty-router@^5.0.18",
-    "jazz-run": "npm:jazz-run@^0.15.8",
     "jazz-tools": "npm:jazz-tools@^0.15",
     "undici": "npm:undici@^7.11.0"
   }
