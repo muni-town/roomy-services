@@ -6,6 +6,7 @@ import { startWorker } from "jazz-tools/worker";
 const challengeTimeoutSeconds = 30;
 const kv = await Deno.openKv();
 
+const powDifficulty = parseInt(Deno.env.get("POW_DIFFICULTY") || "19");
 Pow.init_random();
 
 const syncServer = Deno.env.get("SYNCSERVER");
@@ -45,7 +46,7 @@ router.get("/service-id", () => {
 });
 
 router.get("/get-challenge", () => {
-  const pow = Pow.build_challenge(challengeTimeoutSeconds);
+  const pow = Pow.build_challenge(challengeTimeoutSeconds, powDifficulty);
   return new Response(pow);
 });
 
