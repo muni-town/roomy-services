@@ -118,6 +118,7 @@ leaf.on("authenticated", async () => {
 
   const batchSize = 2000;
   let offset = latestEvent + 1;
+  let updates = 0;
   while (true) {
     const rawEvents = await leaf.fetchEvents(leafStream, {
       offset,
@@ -125,12 +126,11 @@ leaf.on("authenticated", async () => {
     });
     if (rawEvents.length == 0) break;
 
-    await materializeEvents(rawEvents);
+    updates += await materializeEvents(rawEvents);
 
     offset = rawEvents[rawEvents.length - 1].idx + 1;
   }
 
-  let updates = 0;
   while (backfillQueue.length > 0) {
     const events = [...backfillQueue];
     backfillQueue = [];
