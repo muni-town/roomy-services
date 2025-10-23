@@ -8,6 +8,7 @@
 		"simple-git": "^3.28.0",
 		"tsx": "^4.20.6",
 		"typescript": "^5.9.3",
+		"ulidx": "^2.4.1",
 		"undici": "^7.16.0"
 	},
 	"type": "module",
