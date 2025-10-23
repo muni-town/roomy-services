@@ -37,7 +37,7 @@ if (!leafStream) throw `${leafStreamEnv} env var required.`;
 const GIT_REMOTE_NAME = "roomy";
 const BASE_DIR = "./git";
 
-const needsInit = !existsSync(BASE_DIR);
+const needsInit = !existsSync(`${BASE_DIR}/.git`);
 
 if (needsInit) {
   await mkdir(BASE_DIR);
