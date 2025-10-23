@@ -9,7 +9,8 @@ ENV CI=true
 COPY . /project
 WORKDIR /project
 
-RUN apk add --no-cache git
+RUN apk add --no-cache git openssh-client-default
+ENV GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=accept-new"
 
 RUN npm i -g pnpm
 RUN pnpm i
