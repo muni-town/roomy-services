@@ -40,7 +40,11 @@ const BASE_DIR = "./git";
 const needsInit = !existsSync(`${BASE_DIR}/.git`);
 
 if (needsInit) {
-  await mkdir(BASE_DIR);
+  try {
+    await mkdir(BASE_DIR);
+  } catch (_e) {
+    // Ignore if the directory already exists
+  }
 }
 
 const repo = simpleGit({ baseDir: BASE_DIR });
