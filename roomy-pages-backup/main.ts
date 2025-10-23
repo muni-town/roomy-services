@@ -20,11 +20,16 @@ const leafServerEnv = "LEAF_SERVER";
 const usernameEnv = "ATPROTO_USERNAME";
 const passwordEnv = "ATPROTO_APP_PASSWORD";
 const leafStreamEnv = "ROOMY_SPACE";
+const gitEmailEnv = "GIT_EMAIL";
+const gitNameEnv = "GIT_NAME";
 const username = process.env[usernameEnv];
 const leafServer = process.env[leafServerEnv] || "https://leaf.muni.town";
 const password = process.env[passwordEnv];
 const leafStream = process.env[leafStreamEnv];
 const gitRemote = process.env[gitRemoteEnv];
+const gitEmail = process.env[gitEmailEnv];
+const gitName = process.env[gitNameEnv];
+
 if (!username) throw `${usernameEnv} env var required.`;
 if (!password) throw `${passwordEnv} env var required.`;
 if (!leafStream) throw `${leafStreamEnv} env var required.`;
@@ -55,6 +60,9 @@ if (gitRemote) {
     await repo.addRemote(GIT_REMOTE_NAME, gitRemote);
   }
 }
+
+if (gitEmail) repo.addConfig("user.email", gitEmail);
+if (gitName) repo.addConfig("user.name", gitName);
 
 const agent = new AtpAgent({ service: "https://bsky.social" });
 await agent.login({
