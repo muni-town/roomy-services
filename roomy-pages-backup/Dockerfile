@@ -9,6 +9,8 @@ ENV CI=true
 COPY . /project
 WORKDIR /project
 
+RUN apk add --no-cache git
+
 RUN npm i -g pnpm
 RUN pnpm i
 
