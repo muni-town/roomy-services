@@ -50,7 +50,7 @@ if (needsInit) {
 const repo = simpleGit({ baseDir: BASE_DIR });
 
 if (needsInit) {
-  await repo.init();
+  await repo.init(["--initial-branch=main"]);
   await writeFile(
     `${BASE_DIR}/README.md`,
     "# Roomy Backup Dir\n\nThis repo is a backup directory for a roomy space."
