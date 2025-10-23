@@ -125,7 +125,7 @@ leaf.on("authenticated", async () => {
     updates += await materializeEvents(events);
   }
 
-  if (updates > 0) {
+  if (updates > 0 && gitRemote) {
     console.log("Pushing...");
     await repo.push(GIT_REMOTE_NAME, "main", ["--force"]);
     console.log("pushed");
@@ -195,7 +195,7 @@ leaf.on("event", async (event) => {
   } else {
     const changes = await materializeEvents([event]);
 
-    if (changes > 0) {
+    if (changes > 0 && gitRemote) {
       console.log("Pushing...");
       await repo.push(GIT_REMOTE_NAME, "main", ["--force"]);
       console.log("pushed");
