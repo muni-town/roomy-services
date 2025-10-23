@@ -137,11 +137,11 @@ leaf.on("authenticated", async () => {
     updates += await materializeEvents(events);
   }
 
-  if (updates > 0 && gitRemote) {
-    console.log("Pushing...");
-    await repo.push(GIT_REMOTE_NAME, "main", ["--force"]);
-    console.log("pushed");
-  }
+  // Even though there might not have been updates, push anyway, just in case updates from previous
+  // runs weren't pushed yet.
+  console.log("Pushing...");
+  await repo.push(GIT_REMOTE_NAME, "main", ["--force"]);
+  console.log("pushed");
 
   console.log(`done backfilling ${updates} new updates.`);
   backfilling = false;
