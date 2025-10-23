@@ -1,0 +1,17 @@
+{
+	"dependencies": {
+		"@atproto/api": "^0.17.3",
+		"@muni-town/leaf-client": "0.1.0-alpha.5",
+		"@scure/base": "^2.0.0",
+		"diff-match-patch-es": "^1.0.1",
+		"scale-ts": "^1.6.1",
+		"simple-git": "^3.28.0",
+		"tsx": "^4.20.6",
+		"typescript": "^5.9.3",
+		"undici": "^7.16.0"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@types/node": "^24.9.1"
+	}
+}
